@@ -30,5 +30,13 @@ extern void initialise_monitor_handles(void);
 int main(void)
 {
     initialise_monitor_handles();   /* This Function MUST come before the first printf() */
-    printf("Hello, world!\n");      /* IMPORTANT: Always use the "\n" newline character at the end of each string to be printed using printf() function when using semihosting */
+    printf("Hello, world\n");      /* IMPORTANT: Always use the "\n" newline character at the end of each string to be printed using printf() function when using semihosting */
+    
+    int c;
+    do{	//wait for the user
+        c = getchar();
+        (void) printf("%c", c);
+        if(c == '@')
+            break;
+    }while(1);
 }
